@@ -142,4 +142,5 @@ def panel():
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    #app.run(debug = True)
+    app.run(host='172.18.8.58',port=8080)
