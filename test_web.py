@@ -14,7 +14,7 @@ def upload():
     upload_path = os.path.join(basepath, '/tmp/upload',secure_filename(f.filename)) #注意：没有的文件夹一定要先创建，不然会提示没有该路径
     f.save(upload_path)
     return redirect(url_for('upload'))
-  return render_template('upload.html')
+  return render_template('test_upload.html')
 
 if __name__ == '__main__':
   #app.run(debug=True)
