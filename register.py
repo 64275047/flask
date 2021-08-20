@@ -90,7 +90,7 @@ def login_required(func):
 # 1.主页
 @app.route('/')
 def home():
-    return render_template('home.html', username=session.get('username'))
+    return render_template('/register/home.html', username=session.get('username'))
 
 # 2.登录
 @app.route('/login', methods=['GET', 'POST'])
@@ -104,7 +104,7 @@ def login():
         else:
             error = '错误的用户名或密码！'
 
-    return render_template('login.html', error=error)
+    return render_template('/register/login.html', error=error)
 
 # 3.注销
 @app.route('/logout')
@@ -129,7 +129,7 @@ def regist():
         else:
             error = '该用户名或邮箱已被注册！'
 
-    return render_template('regist.html', error=error)
+    return render_template('/register/regist.html', error=error)
 
 # 5.个人中心
 @app.route('/panel')
@@ -137,7 +137,7 @@ def regist():
 def panel():
     username = session.get('username')
     user = User.query.filter(User.username == username).first()
-    return render_template("panel.html", user=user)
+    return render_template("/register/panel.html", user=user)
 
 
 
