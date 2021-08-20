@@ -27,7 +27,7 @@ def hello_world():
     labels = cur.fetchall()
     labels = [l[0] for l in labels]
 
-    return render_template('index.html', labels=labels, content=content)
+    return render_template('/mysql/index.html', labels=labels, content=content)
 
 
 if __name__ == '__main__':
